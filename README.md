@@ -2,7 +2,7 @@
 
 > A SPA project with Vue.js 
 
-View are prerendered with ```prerender-spa-plugin```
+Views are prerendered with ```prerender-spa-plugin```
 
 ## Docker Setup
 
