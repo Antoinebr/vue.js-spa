@@ -32,9 +32,6 @@ export default {
     }
   },
   created (){ 
-
-    //return new Promise((resolve,reject)=>{
-     
       $.getJSON('/api/products.json').done(data => {
           this.products = data;
           console.log('resolved');
@@ -46,9 +43,18 @@ export default {
       .always(function() {
         console.log( "complete" );
       });
-
-    //});    
-
+  },
+    head: {
+    title: function () {
+      return {
+        inner: 'Home',
+        separator: '|',
+        complement: 'My awesome shop'
+      }
+    },
+    meta: [
+      { name: 'description', content: 'Lorem ipsum dolor sit met, qui at desert mandamus, adduce ullum apeirian mea at. Eu mel vide saltando vituperata, sonet quidam deterruisset te qui. Te cum vivendum explicate abhorrent.', id: 'desc' }
+    ]
   }
 
 }

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
-
+import VueHead from 'vue-head'
 
 // templates 
 import App from './App.vue'
@@ -9,6 +9,8 @@ import product from './product.vue'
 import aboutUs from './about-us.vue'
 import search from './search.vue'
 
+// uses
+Vue.use(VueHead)
 Vue.use(VueRouter);
 
 const routes = [

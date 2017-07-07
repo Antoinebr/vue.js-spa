@@ -14,7 +14,20 @@ export default {
     components :{
         'product-list-item' : productListItem
     } ,
-    props : ['title','products']
+    props : ['title','products'],
+    // title for seo
+    head: {
+    title: function () {
+      return {
+        inner: 'My product list',
+        separator: '|',
+        complement: 'My awesome shop'
+      }
+    },
+    meta: [
+      { name: 'description', content: 'Lorem ipsum dolor sit met, qui at desert mandamus, adduce ullum apeirian mea at. Eu mel vide saltando vituperata, sonet quidam deterruisset te qui. Te cum vivendum explicate abhorrent.', id: 'desc' }
+    ]
+  }
 }
 </script>
 

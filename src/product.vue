@@ -22,7 +22,19 @@ export default {
          $.getJSON(`http://localhost:1988/api/?id=${id}`)
             .done(data => {
                 this.product = data;
+                this.title =  this.product.name;
+                this.$emit('updateHead'); // update the title
             })
+    },
+    head: {
+        title: function () {
+            return {
+                inner: this.product.name ,
+                separator: '|',
+                complement: 'My awesome shop'
+            }
+        },
+        meta: [{ name: 'description', content: "Lorem ipsum dolor sit met, qui at desert mandamus, adduce ullum apeirian mea at. Eu mel vide saltando vituperata, sonet quidam deterruisset te qui. Te cum vivendum explicate abhorrent. Id venom argumentum vel. Ut lorem bocent hendrerit eam.", id: 'desc' }]
     }
 }
 </script>
