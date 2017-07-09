@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h3> {{title}} </h3>
+        <h3> {{title}} </h3> 
         <ul>
-            <product-list-item v-for="product in products" :product="product" :key="product.id" ></product-list-item>     
+            <product-list-item v-for="(product,index) in products" :product="product,index" :key="product.id" > </product-list-item>     
         </ul>
     </div>
 </template>

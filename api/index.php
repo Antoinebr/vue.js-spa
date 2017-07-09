@@ -13,7 +13,7 @@ if(isset($_GET['likes'])){
 
 if(!isset($_GET['id'])){
 
-    echo file_get_contents('./products.json');
+    echo json_encode(json_decode(file_get_contents('./products.json')));
     
     die();
 }

@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 import VueHead from 'vue-head'
+import VueLazyload from 'vue-lazyload'
+
+
 
 // templates 
 import App from './App.vue'
@@ -10,7 +13,8 @@ import aboutUs from './about-us.vue'
 import search from './search.vue'
 
 // uses
-Vue.use(VueHead)
+Vue.use(VueHead);
+Vue.use(VueLazyload)
 Vue.use(VueRouter);
 
 const routes = [

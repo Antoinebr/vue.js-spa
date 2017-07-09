@@ -1,9 +1,9 @@
 <template>
     <div>
         <router-link to ='/products'> Back to products</router-link>
-
+        
         <h1>{{product.name}} </h1>
-        <img :src="product.image">
+        <img :img="product.image">
         <p>{{product.description}}</p>
 
     </div>
@@ -19,11 +19,12 @@ export default {
     },
     created(){
         let id = this.$route.params.id;
-         $.getJSON(`http://localhost:1988/api/?id=${id}`)
+         $.getJSON(API_URL+'/api/?id='+id)
             .done(data => {
                 this.product = data;
                 this.title =  this.product.name;
                 this.$emit('updateHead'); // update the title
+                console.log('Ajax call done',data);
             })
     },
     head: {

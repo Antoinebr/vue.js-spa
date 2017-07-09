@@ -32,17 +32,32 @@ export default {
     }
   },
   created (){ 
-      $.getJSON('/api/products.json').done(data => {
+
+       $.ajax({ 
+        url: API_URL+'/api/', 
+        dataType: 'json', 
+        type : 'GET',
+        success : (data) =>{
           this.products = data;
           console.log('resolved');
-         // resolve();
-      }).fail(function() {
-          // reject();
-        console.log( "error" );
-      })
-      .always(function() {
-        console.log( "complete" );
-      });
+        }, 
+        timeout: 20000, // timeout at 20s for flacky networks
+        error(){
+          //$('body').append('<h1> Error during API loading</h1>');
+          console.log( "error" );
+        }
+      }); 
+      // $.getJSON(API_URL+'/api/').done(data => {
+      //     this.products = data;
+      //     console.log('resolved');
+      //    // resolve();
+      // }).fail(function() {
+      //   $('body').append('<h1> Error during API loading</h1>');
+      //   console.log( "error" );
+      // })
+      // .always(function() {
+      //   console.log( "complete" );
+      // });
   },
     head: {
     title: function () {

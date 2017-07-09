@@ -39,7 +39,7 @@ export default {
     },
     created(){
         let id = this.$route.params.id;
-         $.getJSON(`http://localhost:1988/api/?id=${id}`)
+         $.getJSON(API_URL`/api/?id=${id}`)
             .done(data => {
                 this.product = data;
                 this.title =  this.product.name;
@@ -58,3 +58,18 @@ export default {
     }
 }
 ```
+
+## Speed 
+
+### Images Lazyloading 
+
+The project uses [vue-lazyload](https://github.com/hilongjw/vue-lazyload/) to handle lazyloading. 
+
+
+The two firsts images will never be lazyloaded.
+
+```html
+     <img v-if="index > 2" v-lazy="product.image">
+     <img v-else :img="product.image">
+``` 
+
