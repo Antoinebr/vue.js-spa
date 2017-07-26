@@ -2,6 +2,8 @@
 
 > A SPA project with Vue.js 
 
+Demo availabe here https://spa.antoinebrossault.com
+
 Views are prerendered with ```prerender-spa-plugin```
 
 ## Docker Setup
